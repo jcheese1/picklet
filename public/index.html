@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>picklet — a tiny learned function</title>
+  <style>
+    :root{--bg:#f6f4ed;--ink:#252a23;--muted:#6b7065;--line:#d8dacd;--green:#315c43;--lime:#e5edc5;--orange:#ad4f26;--mono:ui-monospace,SFMono-Regular,Consolas,monospace;--sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans)}button,textarea{font:inherit}button{cursor:pointer}button:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--orange);outline-offset:4px}main{max-width:1240px;margin:0 auto;padding:28px 40px 72px}nav{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ink);padding-bottom:20px}.logo{font:700 26px var(--mono);letter-spacing:-2px}.logo span{color:var(--orange)}.tag{font:11px var(--mono);letter-spacing:1px;text-transform:uppercase}.tag i{display:inline-block;width:7px;height:7px;background:var(--green);border-radius:50%;margin-right:8px}.hero{display:grid;grid-template-columns:1.4fr 1fr;gap:44px;padding:46px 0 36px;align-items:end}.eyebrow{font:11px var(--mono);text-transform:uppercase;letter-spacing:1.5px;color:var(--muted)}h1{font-size:clamp(38px,5vw,65px);line-height:1.04;font-weight:530;letter-spacing:-3px;margin:16px 0 0}h1 em{font-style:normal;color:var(--green)}.intro{font-size:16px;line-height:1.65;color:var(--muted);max-width:380px;margin:0 0 4px}.stats{display:grid;grid-template-columns:repeat(4,1fr);border-block:1px solid var(--line);margin-bottom:32px}.stat{padding:19px 0}.stat:not(:first-child){padding-left:24px;border-left:1px solid var(--line)}.number{display:block;font:25px var(--mono);letter-spacing:-1px}.caption{font-size:11px;color:var(--muted);margin-top:6px;display:block}.workbench{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);background:#fffdf6}.pane{padding:26px}.pane+.pane{border-left:1px solid var(--line)}.section-label{display:flex;align-items:center;justify-content:space-between;font:11px var(--mono);letter-spacing:.7px;text-transform:uppercase;margin-bottom:20px;color:var(--muted)}label{display:block;font-size:14px;font-weight:550;margin-bottom:10px}textarea{resize:vertical;min-height:138px;width:100%;padding:15px;border:1px solid #b9bfae;border-radius:0;background:var(--bg);line-height:1.55;color:var(--ink);font-size:17px}textarea:focus{outline:2px solid var(--green);outline-offset:2px}.actions{display:flex;align-items:center;justify-content:space-between;margin:14px 0 24px}.run{background:var(--green);color:white;border:0;padding:12px 22px;font-size:13px}.hint{font:10px var(--mono);color:var(--muted)}.examples{display:flex;gap:7px;flex-wrap:wrap}.example{background:none;border:1px solid var(--line);padding:7px 9px;font-size:11px;color:var(--muted)}.example:hover{background:var(--lime);color:var(--ink)}.example.trap{border-color:#dcc4b3;color:var(--orange)}.code{font:12px/1.85 var(--mono);white-space:pre-wrap;margin:0;color:#686c60}.code .line{display:block;padding:3px 8px;margin:2px -8px;border-left:3px solid transparent}.code .line.active{background:var(--lime);color:var(--green);border-color:var(--green)}.keyword{color:var(--orange)}.outcome{margin-top:23px;display:flex;align-items:center;justify-content:space-between;padding-top:18px;border-top:1px solid var(--line)}.outcome strong{font:22px var(--mono);color:var(--green)}.outcome small{font:10px var(--mono);color:var(--muted)}.scores{display:grid;gap:11px;margin-top:22px}.score{display:grid;grid-template-columns:66px 1fr 44px;gap:12px;align-items:center;font:11px var(--mono)}.track{height:5px;background:#e9eadf}.fill{height:100%;background:#91a77b}.score b{text-align:right;font-weight:400}.disclaimer{font-size:11px;line-height:1.6;color:var(--muted);margin:16px 0 0}.exam{margin-top:32px;border-top:1px solid var(--ink);padding-top:21px}.exam-head{display:flex;justify-content:space-between;align-items:start;gap:24px}.exam h2{font-size:22px;font-weight:500;letter-spacing:-.6px;margin:0}.exam p{font-size:12px;line-height:1.6;color:var(--muted);max-width:670px}.badge{font:11px var(--mono);padding:8px 11px;background:#f0dfd0;color:var(--orange);white-space:nowrap}details{border-top:1px solid var(--line);margin-top:18px}summary{padding:15px 0;cursor:pointer;font:12px var(--mono)}table{width:100%;border-collapse:collapse;font-size:12px}th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}th{font:10px var(--mono);color:var(--muted);text-transform:uppercase}td:nth-child(2),td:nth-child(3){font-family:var(--mono);white-space:nowrap}.wrong{color:var(--orange)}.table-wrap{overflow:auto}footer{display:flex;justify-content:space-between;gap:20px;font:10px var(--mono);color:var(--muted);border-top:1px solid var(--line);margin-top:30px;padding-top:20px}a{color:inherit}.error{color:var(--orange)}@media(max-width:780px){main{padding:22px 20px 40px}.hero{grid-template-columns:1fr;gap:22px;padding:32px 0}.intro{max-width:none}.workbench{grid-template-columns:1fr}.pane+.pane{border-left:0;border-top:1px solid var(--line)}.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(3){padding-left:0;border-left:0;border-top:1px solid var(--line)}.stat:nth-child(4){border-top:1px solid var(--line)}.pane{padding:22px}.exam-head{flex-direction:column;gap:8px}h1{letter-spacing:-2px}.tag{font-size:9px}.hint{font-size:9px}footer{flex-direction:column}}
+  </style>
+</head>
+<body><main>
+  <nav><div class="logo">picklet<span>()</span></div><div class="tag"><i></i>Experiment 001 · local inference</div></nav>
+  <header class="hero"><div><div class="eyebrow">Your switch statement went to school.</div><h1>A switch statement.<br><em>With a tiny brain.</em></h1></div><p class="intro">We taught a small classifier to route an inbox, then packed its weights into JavaScript. Type a message. See which branch it takes.</p></header>
+  <section class="stats" aria-label="Model statistics"><div class="stat"><span class="number" id="size">—</span><span class="caption">KB Brotli · selected model + runtime</span></div><div class="stat"><span class="number" id="params">—</span><span class="caption">learned parameters</span></div><div class="stat"><span class="number" id="training-count">450</span><span class="caption">authored training examples</span></div><div class="stat"><span class="number">0</span><span class="caption">inference API calls</span></div></section>
+  <section class="workbench"><div class="pane"><div class="section-label"><span>01 / Try a message</span><select id="language" aria-label="Model language" style="font:12px var(--mono);padding:7px 10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)"><option value="ja">日本語モデル</option><option value="en">English model</option></select></div><form id="form"><label for="message">What would the customer say?</label><textarea id="message" maxlength="4000" spellcheck="false">返金してください</textarea><div class="actions"><button class="run" id="run-button" type="submit">Run the switch ↗</button><span class="hint">⌘ / Ctrl + Enter</span></div></form><div class="examples" id="examples"></div><p class="disclaimer">Try your own wording. Orange examples expose known weaknesses. This model learned from examples; the branch descriptions alone did not train it.</p></div>
+  <div class="pane"><div class="section-label"><span>02 / One branch executes</span><span id="timing">—</span></div><pre class="code"><span class="keyword">await</span> inbox.match(message, {
+<span class="line" data-branch="refund">  refund: () =&gt; "refund",</span><span class="line" data-branch="support">  support: () =&gt; "support",</span><span class="line" data-branch="sales">  sales: () =&gt; "sales",</span><span class="line" data-branch="otherwise">  otherwise: () =&gt; "clarify",</span>});</pre><p class="disclaimer">Just predicting? Call inbox(message) for a synchronous match or abstain result.</p><div class="outcome" aria-live="polite"><strong id="result">Loading…</strong><small id="reason"></small></div><div class="scores" id="scores"></div><p class="disclaimer">Bars are relative model scores, not probabilities that a decision is correct. Fallback is learned and thresholded; it can still miss unfamiliar requests.</p></div></section>
+  <section class="exam"><div class="exam-head"><div><div class="eyebrow" style="margin-bottom:9px">The report card</div><h2 id="exam-title">Loading the held-out exam…</h2></div><span class="badge" id="errors">—</span></div><p id="exam-note"></p><p id="comparison-note"></p><details><summary id="exam-summary">Inspect all 54 held-out cases</summary><div class="table-wrap"><table><thead><tr><th>Message</th><th>Expected</th><th>Returned</th></tr></thead><tbody id="cases"></tbody></table></div></details></section>
+  <footer><span id="architecture">Character n-grams → learned linear scorer → int8 weights</span><span><a id="download" href="/dist/support-switch-ja.mjs" download>Download the standalone model ↗</a></span></footer>
+</main>
+<script type="module">
+const $ = id => document.getElementById(id);
+let picklet;
+let activeLanguage;
+let loadVersion = 0;
+const drafts = { ja: '返金してください', en: 'I was charged twice. Please refund the extra payment.' };
+const configs = {
+  ja: {
+    module: '/dist/support-switch-ja.mjs', report: '/dist/support-switch-ja.report.json', exam: '/dist/evaluation-ja-audit.json', baseline: '/dist/evaluation-ja-audit-baseline.json',
+    architecture: 'Japanese character 2–5-grams → learned linear scorer → int8 weights',
+    presets: [
+      ['返金', '返金してください'], ['操作相談', 'ログインできません'], ['購入相談', '有料プランを契約したいです'],
+      ['天気の質問', '大阪の天気はどうですか'],
+      ['否定を試す', '返金の手続きは求めていません。アプリが落ちる原因を知りたいです', true],
+      ['曖昧な依頼', '困っているので担当の方と話したいです', true],
+    ],
+  },
+  en: {
+    module: '/dist/support-switch.mjs', report: '/dist/support-switch.report.json', exam: '/dist/evaluation.json',
+    architecture: 'Word + character n-grams → learned linear scorer → int8 weights',
+    presets: [
+      ['Refund', 'The parcel never arrived. I would like my money back.'], ['Support', 'My login no longer works. Can you help?'],
+      ['Sales', 'Can I get a quote for twenty licenses?'], ['Unrelated', 'Tell me a joke about a tiny robot.'],
+      ['Try negation', 'I am not requesting a refund. Please explain how to install it.', true], ['Try a curveball', 'How is the weather in Osaka?', true],
+    ],
+  },
+};
+const labels = ['refund', 'support', 'sales', '__fallback'];
+const display = value => value === '__fallback' ? 'fallback' : value;
+for (const label of labels) {
+  const row = document.createElement('div'); row.className = 'score';
+  const name = document.createElement('span'); name.textContent = display(label);
+  const track = document.createElement('div'); track.className = 'track';
+  const fill = document.createElement('div'); fill.className = 'fill'; fill.id = `bar-${label}`; track.append(fill);
+  const value = document.createElement('b'); value.id = `value-${label}`;
+  row.append(name, track, value); $('scores').append(row);
+}
+async function run() {
+  if (!picklet) return;
+  const message = $('message').value;
+  try {
+    const start = performance.now(); const decision = picklet(message); const elapsed = performance.now() - start;
+    const result = await picklet.match(message, {
+      refund: () => 'refund', support: () => 'support', sales: () => 'sales', otherwise: () => 'clarify',
+    });
+    $('result').textContent = `→ ${result}`; $('reason').textContent = decision.kind === 'match' ? 'selected' : decision.reason.replaceAll('-', ' ');
+    $('timing').textContent = `${elapsed.toFixed(2)} ms · inference`;
+    document.querySelectorAll('[data-branch]').forEach(line => line.classList.toggle('active', line.dataset.branch === (decision.kind === 'match' ? decision.case : 'otherwise')));
+    const scores = Object.fromEntries(decision.candidates.map(candidate => [candidate.case, candidate.score]));
+    scores.__fallback = decision.fallbackScore;
+    for (const label of labels) { const score = scores[label] * 100; $(`bar-${label}`).style.width = `${score}%`; $(`value-${label}`).textContent = `${score.toFixed(1)}%`; }
+  } catch (error) { $('result').textContent = error.message; $('reason').textContent = 'error'; }
+}
+$('form').addEventListener('submit', event => { event.preventDefault(); run(); });
+$('message').addEventListener('keydown', event => { if ((event.metaKey || event.ctrlKey) && event.key === 'Enter') { event.preventDefault(); run(); } });
+const readJSON = path => fetch(path).then(response => { if (!response.ok) throw new Error('Report unavailable'); return response.json(); });
+async function loadLanguage(language) {
+  const version = ++loadVersion;
+  if (activeLanguage) drafts[activeLanguage] = $('message').value;
+  activeLanguage = language;
+  const config = configs[language];
+  picklet = undefined;
+  $('run-button').disabled = true;
+  $('message').value = drafts[language];
+  $('message').lang = language;
+  $('result').textContent = 'Loading…';
+  $('examples').replaceChildren();
+  try {
+    const [{ default: predictor }, model, exam, baseline] = await Promise.all([
+      import(config.module), readJSON(config.report), readJSON(config.exam), config.baseline ? readJSON(config.baseline) : null,
+    ]);
+    if (version !== loadVersion) return;
+    picklet = predictor;
+    $('run-button').disabled = false;
+    for (const [label, text, trap] of config.presets) { const button = document.createElement('button'); button.type = 'button'; button.className = `example${trap ? ' trap' : ''}`; button.textContent = label; button.addEventListener('click', () => { $('message').value = text; run(); }); $('examples').append(button); }
+  $('size').textContent = (model.brotliBytes / 1024).toFixed(1); $('params').textContent = model.parameters.toLocaleString();
+  $('training-count').textContent = model.training.examples.toLocaleString();
+  $('architecture').textContent = config.architecture;
+  $('download').href = config.module;
+  $('exam-title').textContent = `${exam.correct} / ${exam.count} final decisions correct`;
+  $('errors').textContent = `${exam.incorrectAccepted} wrong accepted branches`;
+  const rawTop1 = exam.rawTop1Correct ?? exam.results.filter(row => { const top = row.decision.candidates[0]; return (row.decision.fallbackScore > top.score ? '__fallback' : top.case) === row.label; }).length;
+  $('exam-note').textContent = `${rawTop1}/${exam.count} raw top-1 classifications correct before abstention. ${exam.correctlyAccepted} of ${exam.actionable} actionable requests handled correctly. ${exam.fallbackCorrect} of ${exam.expectedFallback} fallback cases rejected correctly. These are assistant-authored cases, not customer traffic. Thresholds were selected on 26 calibration cases before this exam.`;
+  $('comparison-note').textContent = baseline ? `Same Japanese audit, English-trained model: ${baseline.correct}/${baseline.count} final decisions correct, ${baseline.correctlyAccepted}/${baseline.actionable} actionable requests handled. Japanese training uses a character-based feature profile. Its 0.75 acceptance margin is conservative: many correctly ranked requests still fall back. This fresh audit was written after the initial Japanese experiment and was not used to train or select thresholds.` : '';
+  $('exam-summary').textContent = `Inspect all ${exam.count} ${language === 'ja' ? 'fresh Japanese audit' : 'held-out English'} cases`;
+  $('cases').replaceChildren();
+  for (const row of exam.results) { const tr = document.createElement('tr'); if (!row.correct) tr.className = 'wrong'; for (const value of [row.text, display(row.label), display(row.actual)]) { const td = document.createElement('td'); td.textContent = value; tr.append(td); } $('cases').append(tr); }
+    await run();
+  } catch (error) { if (version === loadVersion) { $('exam-title').textContent = error.message; $('result').textContent = 'Model unavailable'; } }
+}
+$('language').addEventListener('change', () => loadLanguage($('language').value));
+await loadLanguage('ja');
+</script></body></html>

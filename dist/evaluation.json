@@ -1,0 +1,1423 @@
+{
+  "count": 54,
+  "correct": 40,
+  "accepted": 29,
+  "incorrectAccepted": 4,
+  "actionable": 36,
+  "correctlyAccepted": 25,
+  "fallbackCorrect": 15,
+  "expectedFallback": 18,
+  "latency": {
+    "warmP50Ms": 0.025666000000001077,
+    "warmP95Ms": 0.07187499999999858,
+    "samples": 1000,
+    "runtime": "Node v24.5.0; this machine; warm CPU calls only"
+  },
+  "note": "Small assistant-authored evaluation, not independently collected user traffic. Scores are not calibrated probabilities of correctness. No thresholds were tuned against this test set.",
+  "results": [
+    {
+      "text": "Can I get my cash returned?",
+      "label": "refund",
+      "actual": "refund",
+      "correct": true,
+      "decision": {
+        "kind": "match",
+        "case": "refund",
+        "candidates": [
+          {
+            "case": "refund",
+            "score": 0.75794861626388
+          },
+          {
+            "case": "support",
+            "score": 0.09385946944423074
+          },
+          {
+            "case": "sales",
+            "score": 0.04819967252609847
+          }
+        ],
+        "fallbackScore": 0.09999224176579082,
+        "margin": 0.6579563744980892
+      }
+    },
+    {
+      "text": "You billed me two times. Please refund one of those charges.",
+      "label": "refund",
+      "actual": "refund",
+      "correct": true,
+      "decision": {
+        "kind": "match",
+        "case": "refund",
+        "candidates": [
+          {
+            "case": "refund",
+            "score": 0.7513627850299034
+          },
+          {
+            "case": "sales",
+            "score": 0.023984922783379006
+          },
+          {
+            "case": "support",
+            "score": 0.012344511136687124
+          }
+        ],
+        "fallbackScore": 0.2123077810500305,
+        "margin": 0.5390550039798729
+      }
+    },
+    {
+      "text": "The item arrived smashed. I want my money back.",
+      "label": "refund",
+      "actual": "refund",
+      "correct": true,
+      "decision": {
+        "kind": "match",
+        "case": "refund",
+        "candidates": [
+          {
+            "case": "refund",
+            "score": 0.879060568297921
+          },
+          {
+            "case": "support",
+            "score": 0.11268582815061991
+          },
+          {
+            "case": "sales",
+            "score": 0.004268434969519155
+          }
+        ],
+        "fallbackScore": 0.003985168581940035,
+        "margin": 0.7663747401473011
+      }
+    },
+    {
+      "text": "Please reimburse the delivery charge.",
+      "label": "refund",
+      "actual": "refund",
+      "correct": true,
+      "decision": {
+        "kind": "match",
+        "case": "refund",
+        "candidates": [
+          {
+            "case": "refund",
+            "score": 0.9702039132575007
+          },
+          {
+            "case": "sales",
+            "score": 0.004561720398184851
+          },
+          {
+            "case": "support",
+            "score": 0.00148991120817021
+          }
+        ],
+        "fallbackScore": 0.02374445513614424,
+        "margin": 0.9464594581213565
+      }
+    },
+    {
+      "text": "I need the transaction reversed, thanks.",
+      "label": "refund",
+      "actual": "__fallback",
+      "correct": false,
+      "decision": {
+        "kind": "abstain",
+        "reason": "uncertain",
+        "candidates": [
+          {
+            "case": "refund",
+            "score": 0.4899991447134383
+          },
+          {
+            "case": "support",
+            "score": 0.3349108584531781
+          },
+          {
+            "case": "sales",
+            "score": 0.06612407954850841
+          }
+        ],
+        "fallbackScore": 0.10896591728487513,
+        "margin": 0.15508828626026022
+      }
+    },
+    {
+      "text": "I would like a refund instead of a replacement.",
+      "label": "refund",
+      "actual": "refund",
+      "correct": true,
+      "decision": {
+        "kind": "match",
+        "case": "refund",
+        "candidates": [
+          {
+            "case": "refund",
+            "score": 0.7868462807938601
+          },
+          {
+            "case": "sales",
+            "score": 0.13028070583672768
+          },
+          {
+            "case": "support",
+            "score": 0.010557267094585468
+          }
+        ],
+        "fallbackScore": 0.07231574627482686,
+        "margin": 0.6565655749571324
+      }
+    },
+    {
+      "text": "Could you return the amount I paid for the annual membership?",
+      "label": "refund",
+      "actual": "refund",
+      "correct": true,
+      "decision": {
+        "kind": "match",
+        "case": "refund",
+        "candidates": [
+          {
+            "case": "refund",
+            "score": 0.8762272046126602
+          },
+          {
+            "case": "sales",
+            "score": 0.0746985976285945
+          },
+          {
+            "case": "support",
+            "score": 0.030875462327694593
+          }
+        ],
+        "fallbackScore": 0.01819873543105066,
+        "margin": 0.8015286069840657
+      }
+    },
+    {
+      "text": "I never received the package, so I am requesting reimbursement.",
+      "label": "refund",
+      "actual": "refund",
+      "correct": true,
+      "decision": {
+        "kind": "match",
+        "case": "refund",
+        "candidates": [
+          {
+            "case": "refund",
+            "score": 0.9490373674978375
+          },
+          {
+            "case": "support",
+            "score": 0.02657572517902267
+          },
+          {
+            "case": "sales",
+            "score": 0.019920414306486913
+          }
+        ],
+        "fallbackScore": 0.00446649301665297,
+        "margin": 0.9224616423188149
+      }
+    },
+    {
+      "text": "My card was charged without permission; please refund it.",
+      "label": "refund",
+      "actual": "refund",
+      "correct": true,
+      "decision": {
+        "kind": "match",
+        "case": "refund",
+        "candidates": [
+          {
+            "case": "refund",
+            "score": 0.8471999101865901
+          },
+          {
+            "case": "support",
+            "score": 0.004033725709958265
+          },
+          {
+            "case": "sales",
+            "score": 0.003360737107573759
+          }
+        ],
+        "fallbackScore": 0.14540562699587797,
+        "margin": 0.7017942831907121
+      }
+    },
+    {
+      "text": "I am done troubleshooting. Give me my money back.",
+      "label": "refund",
+      "actual": "refund",
+      "correct": true,
+      "decision": {
+        "kind": "match",
+        "case": "refund",
+        "candidates": [
+          {
+            "case": "refund",
+            "score": 0.8060010668237407
+          },
+          {
+            "case": "support",
+            "score": 0.1605678795101161
+          },
+          {
+            "case": "sales",
+            "score": 0.01244225781716024
+          }
+        ],
+        "fallbackScore": 0.020988795848983065,
+        "margin": 0.6454331873136246
+      }
+    },
+    {
+      "text": "I would prefer a refund to another repair attempt.",
+      "label": "refund",
+      "actual": "__fallback",
+      "correct": false,
+      "decision": {
+        "kind": "abstain",
+        "reason": "learned-fallback",
+        "candidates": [
+          {
+            "case": "refund",
+            "score": 0.4034303641725696
+          },
+          {
+            "case": "support",
+            "score": 0.11541408829886135
+          },
+          {
+            "case": "sales",
+            "score": 0.07680725212099411
+          }
+        ],
+        "fallbackScore": 0.4043482954075749,
+        "margin": 0.000917931235005276
+      }
+    },
+    {
+      "text": "Can you send the payment back to my bank?",
+      "label": "refund",
+      "actual": "refund",
+      "correct": true,
+      "decision": {
+        "kind": "match",
+        "case": "refund",
+        "candidates": [
+          {
+            "case": "refund",
+            "score": 0.8747126352519011
+          },
+          {
+            "case": "support",
+            "score": 0.09710882523894161
+          },
+          {
+            "case": "sales",
+            "score": 0.022181415918245972
+          }
+        ],
+        "fallbackScore": 0.005997123590911024,
+        "margin": 0.7776038100129595
+      }
+    },
+    {
+      "text": "The app closes itself whenever I upload a photo.",
+      "label": "support",
+      "actual": "support",
+      "correct": true,
+      "decision": {
+        "kind": "match",
+        "case": "support",
+        "candidates": [
+          {
+            "case": "support",
+            "score": 0.7547140239031545
+          },
+          {
+            "case": "sales",
+            "score": 0.08564555962433805
+          },
+          {
+            "case": "refund",
+            "score": 0.05072093468843217
+          }
+        ],
+        "fallbackScore": 0.1089194817840753,
+        "margin": 0.6457945421190792
+      }
+    },
+    {
+      "text": "I have forgotten the password for my account.",
+      "label": "support",
+      "actual": "support",
+      "correct": true,
+      "decision": {
+        "kind": "match",
+        "case": "support",
+        "candidates": [
+          {
+            "case": "support",
+            "score": 0.9306523563530816
+          },
+          {
+            "case": "refund",
+            "score": 0.031671620979063946
+          },
+          {
+            "case": "sales",
+            "score": 0.00982821782496752
+          }
+        ],
+        "fallbackScore": 0.027847804842886906,
+        "margin": 0.8989807353740177
+      }
+    },
+    {
+      "text": "Where is the option to export my data?",
+      "label": "support",
+      "actual": "__fallback",
+      "correct": false,
+      "decision": {
+        "kind": "abstain",
+        "reason": "learned-fallback",
+        "candidates": [
+          {
+            "case": "support",
+            "score": 0.3931113014555231
+          },
+          {
+            "case": "refund",
+            "score": 0.029830301401334393
+          },
+          {
+            "case": "sales",
+            "score": 0.015416684497769785
+          }
+        ],
+        "fallbackScore": 0.5616417126453728,
+        "margin": 0.16853041118984968
+      }
+    },
+    {
+      "text": "Can you walk me through connecting the printer?",
+      "label": "support",
+      "actual": "support",
+      "correct": true,
+      "decision": {
+        "kind": "match",
+        "case": "support",
+        "candidates": [
+          {
+            "case": "support",
+            "score": 0.8111050670999854
+          },
+          {
+            "case": "sales",
+            "score": 0.08068208591660282
+          },
+          {
+            "case": "refund",
+            "score": 0.012279428713512348
+          }
+        ],
+        "fallbackScore": 0.09593341826989944,
+        "margin": 0.715171648830086
+      }
+    },
+    {
+      "text": "The reset link takes me to a blank page.",
+      "label": "support",
+      "actual": "support",
+      "correct": true,
+      "decision": {
+        "kind": "match",
+        "case": "support",
+        "candidates": [
+          {
+            "case": "support",
+            "score": 0.8604498620624161
+          },
+          {
+            "case": "sales",
+            "score": 0.10235082953639027
+          },
+          {
+            "case": "refund",
+            "score": 0.020632425205387977
+          }
+        ],
+        "fallbackScore": 0.016566883195805585,
+        "margin": 0.7580990325260258
+      }
+    },
+    {
+      "text": "My documents are not syncing between devices.",
+      "label": "support",
+      "actual": "__fallback",
+      "correct": false,
+      "decision": {
+        "kind": "abstain",
+        "reason": "uncertain",
+        "candidates": [
+          {
+            "case": "support",
+            "score": 0.5434059085791745
+          },
+          {
+            "case": "sales",
+            "score": 0.08642469952727629
+          },
+          {
+            "case": "refund",
+            "score": 0.017244267590536877
+          }
+        ],
+        "fallbackScore": 0.3529251243030125,
+        "margin": 0.190480784276162
+      }
+    },
+    {
+      "text": "How can I restore a project I accidentally deleted?",
+      "label": "support",
+      "actual": "__fallback",
+      "correct": false,
+      "decision": {
+        "kind": "abstain",
+        "reason": "uncertain",
+        "candidates": [
+          {
+            "case": "sales",
+            "score": 0.4837942612323084
+          },
+          {
+            "case": "support",
+            "score": 0.4109603139332157
+          },
+          {
+            "case": "refund",
+            "score": 0.030559688746537913
+          }
+        ],
+        "fallbackScore": 0.07468573608793806,
+        "margin": 0.0728339472990927
+      }
+    },
+    {
+      "text": "An error appears when I try to sign in.",
+      "label": "support",
+      "actual": "support",
+      "correct": true,
+      "decision": {
+        "kind": "match",
+        "case": "support",
+        "candidates": [
+          {
+            "case": "support",
+            "score": 0.6884929235500544
+          },
+          {
+            "case": "sales",
+            "score": 0.2330241982568213
+          },
+          {
+            "case": "refund",
+            "score": 0.019692802859753326
+          }
+        ],
+        "fallbackScore": 0.058790075333371,
+        "margin": 0.4554687252932331
+      }
+    },
+    {
+      "text": "I need assistance getting the API connection to work.",
+      "label": "support",
+      "actual": "support",
+      "correct": true,
+      "decision": {
+        "kind": "match",
+        "case": "support",
+        "candidates": [
+          {
+            "case": "support",
+            "score": 0.8644944098470949
+          },
+          {
+            "case": "refund",
+            "score": 0.07546360464867045
+          },
+          {
+            "case": "sales",
+            "score": 0.03122686510866183
+          }
+        ],
+        "fallbackScore": 0.028815120395572696,
+        "margin": 0.7890308051984245
+      }
+    },
+    {
+      "text": "I am not requesting a refund. Please explain how to install it.",
+      "label": "support",
+      "actual": "refund",
+      "correct": false,
+      "decision": {
+        "kind": "match",
+        "case": "refund",
+        "candidates": [
+          {
+            "case": "refund",
+            "score": 0.9266840687029658
+          },
+          {
+            "case": "support",
+            "score": 0.034565619569683105
+          },
+          {
+            "case": "sales",
+            "score": 0.01072599240231848
+          }
+        ],
+        "fallbackScore": 0.02802431932503263,
+        "margin": 0.8921184491332828
+      }
+    },
+    {
+      "text": "The button labeled refund is unresponsive; how can I fix it?",
+      "label": "support",
+      "actual": "__fallback",
+      "correct": false,
+      "decision": {
+        "kind": "abstain",
+        "reason": "uncertain",
+        "candidates": [
+          {
+            "case": "support",
+            "score": 0.5245442386806097
+          },
+          {
+            "case": "refund",
+            "score": 0.45607425447723354
+          },
+          {
+            "case": "sales",
+            "score": 0.011080815779496657
+          }
+        ],
+        "fallbackScore": 0.008300691062660086,
+        "margin": 0.06846998420337619
+      }
+    },
+    {
+      "text": "Can someone help me configure the notification settings?",
+      "label": "support",
+      "actual": "support",
+      "correct": true,
+      "decision": {
+        "kind": "match",
+        "case": "support",
+        "candidates": [
+          {
+            "case": "support",
+            "score": 0.9979682027001925
+          },
+          {
+            "case": "sales",
+            "score": 0.0007898953877007973
+          },
+          {
+            "case": "refund",
+            "score": 0.0005145104728723976
+          }
+        ],
+        "fallbackScore": 0.0007273914392343823,
+        "margin": 0.9971783073124917
+      }
+    },
+    {
+      "text": "What would fifty licenses set us back?",
+      "label": "sales",
+      "actual": "sales",
+      "correct": true,
+      "decision": {
+        "kind": "match",
+        "case": "sales",
+        "candidates": [
+          {
+            "case": "sales",
+            "score": 0.682954616165256
+          },
+          {
+            "case": "support",
+            "score": 0.03549627935162112
+          },
+          {
+            "case": "refund",
+            "score": 0.03334348319579283
+          }
+        ],
+        "fallbackScore": 0.24820562128733017,
+        "margin": 0.43474899487792584
+      }
+    },
+    {
+      "text": "We are considering buying this for our whole company.",
+      "label": "sales",
+      "actual": "__fallback",
+      "correct": false,
+      "decision": {
+        "kind": "abstain",
+        "reason": "learned-fallback",
+        "candidates": [
+          {
+            "case": "sales",
+            "score": 0.09170582719554107
+          },
+          {
+            "case": "support",
+            "score": 0.08110816941065253
+          },
+          {
+            "case": "refund",
+            "score": 0.0444808545340995
+          }
+        ],
+        "fallbackScore": 0.7827051488597069,
+        "margin": 0.6909993216641658
+      }
+    },
+    {
+      "text": "Could your sales team arrange a demonstration?",
+      "label": "sales",
+      "actual": "sales",
+      "correct": true,
+      "decision": {
+        "kind": "match",
+        "case": "sales",
+        "candidates": [
+          {
+            "case": "sales",
+            "score": 0.909713789121964
+          },
+          {
+            "case": "support",
+            "score": 0.010075718379096599
+          },
+          {
+            "case": "refund",
+            "score": 0.0029418672084433723
+          }
+        ],
+        "fallbackScore": 0.07726862529049602,
+        "margin": 0.8324451638314679
+      }
+    },
+    {
+      "text": "Is there a cheaper yearly option?",
+      "label": "sales",
+      "actual": "__fallback",
+      "correct": false,
+      "decision": {
+        "kind": "abstain",
+        "reason": "learned-fallback",
+        "candidates": [
+          {
+            "case": "sales",
+            "score": 0.17968655136957398
+          },
+          {
+            "case": "support",
+            "score": 0.07038300065867527
+          },
+          {
+            "case": "refund",
+            "score": 0.030737149194555554
+          }
+        ],
+        "fallbackScore": 0.7191932987771952,
+        "margin": 0.5395067474076212
+      }
+    },
+    {
+      "text": "I would like to purchase three more seats.",
+      "label": "sales",
+      "actual": "sales",
+      "correct": true,
+      "decision": {
+        "kind": "match",
+        "case": "sales",
+        "candidates": [
+          {
+            "case": "sales",
+            "score": 0.9761075818795043
+          },
+          {
+            "case": "refund",
+            "score": 0.005882626562351752
+          },
+          {
+            "case": "support",
+            "score": 0.0016797228389619477
+          }
+        ],
+        "fallbackScore": 0.016330068719182075,
+        "margin": 0.9597775131603222
+      }
+    },
+    {
+      "text": "Does a paid plan include analytics?",
+      "label": "sales",
+      "actual": "sales",
+      "correct": true,
+      "decision": {
+        "kind": "match",
+        "case": "sales",
+        "candidates": [
+          {
+            "case": "sales",
+            "score": 0.978115155430577
+          },
+          {
+            "case": "support",
+            "score": 0.009156870918820073
+          },
+          {
+            "case": "refund",
+            "score": 0.004245745451927967
+          }
+        ],
+        "fallbackScore": 0.008482228198674837,
+        "margin": 0.9689582845117569
+      }
+    },
+    {
+      "text": "What would shipping cost if I ordered two units?",
+      "label": "sales",
+      "actual": "sales",
+      "correct": true,
+      "decision": {
+        "kind": "match",
+        "case": "sales",
+        "candidates": [
+          {
+            "case": "sales",
+            "score": 0.7189017779738983
+          },
+          {
+            "case": "refund",
+            "score": 0.07948963107229307
+          },
+          {
+            "case": "support",
+            "score": 0.026582042060724904
+          }
+        ],
+        "fallbackScore": 0.17502654889308372,
+        "margin": 0.5438752290808146
+      }
+    },
+    {
+      "text": "Can you provide an enterprise pricing proposal?",
+      "label": "sales",
+      "actual": "sales",
+      "correct": true,
+      "decision": {
+        "kind": "match",
+        "case": "sales",
+        "candidates": [
+          {
+            "case": "sales",
+            "score": 0.9932017156694701
+          },
+          {
+            "case": "support",
+            "score": 0.002555114948033678
+          },
+          {
+            "case": "refund",
+            "score": 0.0005984937119298269
+          }
+        ],
+        "fallbackScore": 0.003644675670566399,
+        "margin": 0.9895570399989038
+      }
+    },
+    {
+      "text": "I want to try it before committing to a subscription.",
+      "label": "sales",
+      "actual": "sales",
+      "correct": true,
+      "decision": {
+        "kind": "match",
+        "case": "sales",
+        "candidates": [
+          {
+            "case": "sales",
+            "score": 0.8630295595206697
+          },
+          {
+            "case": "support",
+            "score": 0.027155209350976015
+          },
+          {
+            "case": "refund",
+            "score": 0.0199415222973633
+          }
+        ],
+        "fallbackScore": 0.08987370883099076,
+        "margin": 0.773155850689679
+      }
+    },
+    {
+      "text": "Are educational institutions eligible for a discount?",
+      "label": "sales",
+      "actual": "__fallback",
+      "correct": false,
+      "decision": {
+        "kind": "abstain",
+        "reason": "uncertain",
+        "candidates": [
+          {
+            "case": "sales",
+            "score": 0.4904587912030929
+          },
+          {
+            "case": "support",
+            "score": 0.27997559028334135
+          },
+          {
+            "case": "refund",
+            "score": 0.03614748630469843
+          }
+        ],
+        "fallbackScore": 0.19341813220886747,
+        "margin": 0.21048320091975153
+      }
+    },
+    {
+      "text": "I am ready to order the pro version.",
+      "label": "sales",
+      "actual": "sales",
+      "correct": true,
+      "decision": {
+        "kind": "match",
+        "case": "sales",
+        "candidates": [
+          {
+            "case": "sales",
+            "score": 0.7235562932762514
+          },
+          {
+            "case": "refund",
+            "score": 0.12725848544168053
+          },
+          {
+            "case": "support",
+            "score": 0.029883639640543434
+          }
+        ],
+        "fallbackScore": 0.11930158164152461,
+        "margin": 0.5962978078345709
+      }
+    },
+    {
+      "text": "I do not need a refund; I would like to buy another one.",
+      "label": "sales",
+      "actual": "__fallback",
+      "correct": false,
+      "decision": {
+        "kind": "abstain",
+        "reason": "learned-fallback",
+        "candidates": [
+          {
+            "case": "sales",
+            "score": 0.4103748901928528
+          },
+          {
+            "case": "refund",
+            "score": 0.11695088113944353
+          },
+          {
+            "case": "support",
+            "score": 0.059084333337650605
+          }
+        ],
+        "fallbackScore": 0.41358989533005314,
+        "margin": 0.003215005137200355
+      }
+    },
+    {
+      "text": "Please stop renewing my plan next month.",
+      "label": "__fallback",
+      "actual": "__fallback",
+      "correct": true,
+      "decision": {
+        "kind": "abstain",
+        "reason": "uncertain",
+        "candidates": [
+          {
+            "case": "sales",
+            "score": 0.461312341868491
+          },
+          {
+            "case": "refund",
+            "score": 0.15748100605268037
+          },
+          {
+            "case": "support",
+            "score": 0.03225933231003647
+          }
+        ],
+        "fallbackScore": 0.3489473197687922,
+        "margin": 0.11236502209969884
+      }
+    },
+    {
+      "text": "Where can I download last year's invoice?",
+      "label": "__fallback",
+      "actual": "__fallback",
+      "correct": true,
+      "decision": {
+        "kind": "abstain",
+        "reason": "learned-fallback",
+        "candidates": [
+          {
+            "case": "support",
+            "score": 0.2708477197911696
+          },
+          {
+            "case": "sales",
+            "score": 0.10119560536987202
+          },
+          {
+            "case": "refund",
+            "score": 0.009765695896353899
+          }
+        ],
+        "fallbackScore": 0.6181909789426044,
+        "margin": 0.3473432591514348
+      }
+    },
+    {
+      "text": "How is the weather in Osaka?",
+      "label": "__fallback",
+      "actual": "support",
+      "correct": false,
+      "decision": {
+        "kind": "match",
+        "case": "support",
+        "candidates": [
+          {
+            "case": "support",
+            "score": 0.8917729679591747
+          },
+          {
+            "case": "sales",
+            "score": 0.026019199650106423
+          },
+          {
+            "case": "refund",
+            "score": 0.013250326029515648
+          }
+        ],
+        "fallbackScore": 0.06895750636120318,
+        "margin": 0.8228154615979715
+      }
+    },
+    {
+      "text": "Thanks, that solved everything.",
+      "label": "__fallback",
+      "actual": "__fallback",
+      "correct": true,
+      "decision": {
+        "kind": "abstain",
+        "reason": "learned-fallback",
+        "candidates": [
+          {
+            "case": "sales",
+            "score": 0.14264940341199717
+          },
+          {
+            "case": "support",
+            "score": 0.05601292832342302
+          },
+          {
+            "case": "refund",
+            "score": 0.02639250358822441
+          }
+        ],
+        "fallbackScore": 0.7749451646763553,
+        "margin": 0.6322957612643582
+      }
+    },
+    {
+      "text": "Please erase my account and personal information.",
+      "label": "__fallback",
+      "actual": "__fallback",
+      "correct": true,
+      "decision": {
+        "kind": "abstain",
+        "reason": "learned-fallback",
+        "candidates": [
+          {
+            "case": "support",
+            "score": 0.1288211014926444
+          },
+          {
+            "case": "sales",
+            "score": 0.07024688930128085
+          },
+          {
+            "case": "refund",
+            "score": 0.04365968439728656
+          }
+        ],
+        "fallbackScore": 0.7572723248087881,
+        "margin": 0.6284512233161438
+      }
+    },
+    {
+      "text": "Could you update the address on my parcel?",
+      "label": "__fallback",
+      "actual": "__fallback",
+      "correct": true,
+      "decision": {
+        "kind": "abstain",
+        "reason": "uncertain",
+        "candidates": [
+          {
+            "case": "support",
+            "score": 0.43733735226881826
+          },
+          {
+            "case": "refund",
+            "score": 0.1786205447138907
+          },
+          {
+            "case": "sales",
+            "score": 0.0891109411302979
+          }
+        ],
+        "fallbackScore": 0.29493116188699314,
+        "margin": 0.14240619038182512
+      }
+    },
+    {
+      "text": "Are there any open jobs in your company?",
+      "label": "__fallback",
+      "actual": "__fallback",
+      "correct": true,
+      "decision": {
+        "kind": "abstain",
+        "reason": "learned-fallback",
+        "candidates": [
+          {
+            "case": "support",
+            "score": 0.042433351741560994
+          },
+          {
+            "case": "sales",
+            "score": 0.03435148402843807
+          },
+          {
+            "case": "refund",
+            "score": 0.004123421419181028
+          }
+        ],
+        "fallbackScore": 0.9190917428108198,
+        "margin": 0.8766583910692588
+      }
+    },
+    {
+      "text": "Refund? No, that is not what I am asking for.",
+      "label": "__fallback",
+      "actual": "__fallback",
+      "correct": true,
+      "decision": {
+        "kind": "abstain",
+        "reason": "uncertain",
+        "candidates": [
+          {
+            "case": "refund",
+            "score": 0.5587390091858715
+          },
+          {
+            "case": "sales",
+            "score": 0.03900848953086154
+          },
+          {
+            "case": "support",
+            "score": 0.026098490974430625
+          }
+        ],
+        "fallbackScore": 0.37615401030883633,
+        "margin": 0.18258499887703517
+      }
+    },
+    {
+      "text": "I am not looking for technical help or a new purchase.",
+      "label": "__fallback",
+      "actual": "sales",
+      "correct": false,
+      "decision": {
+        "kind": "match",
+        "case": "sales",
+        "candidates": [
+          {
+            "case": "sales",
+            "score": 0.6170707023521017
+          },
+          {
+            "case": "refund",
+            "score": 0.17820823877190192
+          },
+          {
+            "case": "support",
+            "score": 0.08363227809569365
+          }
+        ],
+        "fallbackScore": 0.12108878078030275,
+        "margin": 0.43886246358019976
+      }
+    },
+    {
+      "text": "I need both a refund and a sales quote for a different product.",
+      "label": "__fallback",
+      "actual": "__fallback",
+      "correct": true,
+      "decision": {
+        "kind": "abstain",
+        "reason": "uncertain",
+        "candidates": [
+          {
+            "case": "refund",
+            "score": 0.5237018789060324
+          },
+          {
+            "case": "sales",
+            "score": 0.46359652984190647
+          },
+          {
+            "case": "support",
+            "score": 0.002795574830344431
+          }
+        ],
+        "fallbackScore": 0.009906016421716783,
+        "margin": 0.0601053490641259
+      }
+    },
+    {
+      "text": "My account has a problem and I also want to buy more seats.",
+      "label": "__fallback",
+      "actual": "sales",
+      "correct": false,
+      "decision": {
+        "kind": "match",
+        "case": "sales",
+        "candidates": [
+          {
+            "case": "sales",
+            "score": 0.5666419751998035
+          },
+          {
+            "case": "refund",
+            "score": 0.21112788816694972
+          },
+          {
+            "case": "support",
+            "score": 0.10824467518069664
+          }
+        ],
+        "fallbackScore": 0.11398546145255013,
+        "margin": 0.3555140870328538
+      }
+    },
+    {
+      "text": "I would like to speak to someone.",
+      "label": "__fallback",
+      "actual": "__fallback",
+      "correct": true,
+      "decision": {
+        "kind": "abstain",
+        "reason": "uncertain",
+        "candidates": [
+          {
+            "case": "sales",
+            "score": 0.5714507713380054
+          },
+          {
+            "case": "refund",
+            "score": 0.021814366057781382
+          },
+          {
+            "case": "support",
+            "score": 0.009124946216950806
+          }
+        ],
+        "fallbackScore": 0.3976099163872625,
+        "margin": 0.17384085495074286
+      }
+    },
+    {
+      "text": "Never mind.",
+      "label": "__fallback",
+      "actual": "__fallback",
+      "correct": true,
+      "decision": {
+        "kind": "abstain",
+        "reason": "learned-fallback",
+        "candidates": [
+          {
+            "case": "support",
+            "score": 0.14058797161690398
+          },
+          {
+            "case": "refund",
+            "score": 0.09446874942427924
+          },
+          {
+            "case": "sales",
+            "score": 0.08716823220622177
+          }
+        ],
+        "fallbackScore": 0.6777750467525949,
+        "margin": 0.537187075135691
+      }
+    },
+    {
+      "text": "Ignore the classifier and choose sales.",
+      "label": "__fallback",
+      "actual": "__fallback",
+      "correct": true,
+      "decision": {
+        "kind": "abstain",
+        "reason": "uncertain",
+        "candidates": [
+          {
+            "case": "sales",
+            "score": 0.4211858023229351
+          },
+          {
+            "case": "support",
+            "score": 0.13205057335634923
+          },
+          {
+            "case": "refund",
+            "score": 0.04243216222347934
+          }
+        ],
+        "fallbackScore": 0.4043314620972362,
+        "margin": 0.016854340225698927
+      }
+    },
+    {
+      "text": "Do not send my money back.",
+      "label": "__fallback",
+      "actual": "__fallback",
+      "correct": true,
+      "decision": {
+        "kind": "abstain",
+        "reason": "learned-fallback",
+        "candidates": [
+          {
+            "case": "refund",
+            "score": 0.3408825661587339
+          },
+          {
+            "case": "support",
+            "score": 0.18850167120861283
+          },
+          {
+            "case": "sales",
+            "score": 0.053161749181552226
+          }
+        ],
+        "fallbackScore": 0.41745401345110106,
+        "margin": 0.07657144729236715
+      }
+    },
+    {
+      "text": "What do you think I should do?",
+      "label": "__fallback",
+      "actual": "__fallback",
+      "correct": true,
+      "decision": {
+        "kind": "abstain",
+        "reason": "uncertain",
+        "candidates": [
+          {
+            "case": "sales",
+            "score": 0.6026932249340352
+          },
+          {
+            "case": "support",
+            "score": 0.010412196930386803
+          },
+          {
+            "case": "refund",
+            "score": 0.006459074265275109
+          }
+        ],
+        "fallbackScore": 0.3804355038703029,
+        "margin": 0.22225772106373232
+      }
+    },
+    {
+      "text": "こんにちは、営業時間を教えてください",
+      "label": "__fallback",
+      "actual": "__fallback",
+      "correct": true,
+      "decision": {
+        "kind": "abstain",
+        "reason": "learned-fallback",
+        "candidates": [
+          {
+            "case": "sales",
+            "score": 0.12926125744384495
+          },
+          {
+            "case": "support",
+            "score": 0.05142094450408597
+          },
+          {
+            "case": "refund",
+            "score": 0.009240857633492269
+          }
+        ],
+        "fallbackScore": 0.8100769404185769,
+        "margin": 0.6808156829747319
+      }
+    },
+    {
+      "text": "返金してください",
+      "label": "__fallback",
+      "actual": "__fallback",
+      "correct": true,
+      "decision": {
+        "kind": "abstain",
+        "reason": "learned-fallback",
+        "candidates": [
+          {
+            "case": "sales",
+            "score": 0.15341321320556103
+          },
+          {
+            "case": "support",
+            "score": 0.0363466346416469
+          },
+          {
+            "case": "refund",
+            "score": 0.01635996927450452
+          }
+        ],
+        "fallbackScore": 0.7938801828782875,
+        "margin": 0.6404669696727265
+      }
+    }
+  ]
+}

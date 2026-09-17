@@ -1,0 +1,32 @@
+{
+  "name": "support-inbox-japanese",
+  "parameters": 16388,
+  "weightBytes": 16384,
+  "artifactBytes": 27607,
+  "gzipBytes": 17595,
+  "brotliBytes": 15770,
+  "training": {
+    "examples": 450,
+    "epochs": 100,
+    "seed": 20260917,
+    "architecture": "hashed word/character n-grams + linear softmax, int8 weights",
+    "provenance": "Assistant-authored Japanese examples: 150 base phrases, three training-only variants each. No external teacher API. Japanese calibration and exam authored separately and frozen before training. Same architecture/settings as the English baseline. Single-intent refund/support/sales routing; ambiguous, mixed-intent and out-of-scope requests should abstain.",
+    "specSha256": "512f7349b4be12b5f1cfe6ee577c82a3761da743419ec603766fc534dc376d5c"
+  },
+  "calibration": {
+    "count": 26,
+    "accepted": 4,
+    "acceptedErrors": 0,
+    "note": "Thresholds selected on this small authored calibration set; not a statistical safety guarantee."
+  },
+  "policy": {
+    "minScore": 0.4,
+    "minMargin": 0.7
+  },
+  "quantization": {
+    "checked": 476,
+    "changedWinners": 1,
+    "maxScoreDifference": 0.004590175187108914
+  },
+  "compileMs": 360.13591699999995
+}

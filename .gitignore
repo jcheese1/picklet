@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Local package archives (rebuild with `bun run pack`)
+artifacts/
+
+# Website build output; the compiled models in the root dist/ are committed on purpose
+website/dist/
+
+# Tooling and OS files
+*.tsbuildinfo
+*.log
+.DS_Store
+.env
+.env.*
+!.env.example

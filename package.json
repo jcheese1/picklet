@@ -1,0 +1,49 @@
+{
+  "name": "picklet",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "An experimental compiler for tiny, local semantic switches",
+  "bin": {
+    "picklet": "./bin/picklet.mjs"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/define.d.mts",
+      "import": "./src/define.mjs"
+    }
+  },
+  "scripts": {
+    "compile": "node bin/picklet.mjs compile examples/support.switch.ts --out dist/support-switch.mjs",
+    "compile:ja": "node bin/picklet.mjs compile examples/support.ja.switch.ts --out dist/support-switch-ja.mjs",
+    "evaluate": "node scripts/evaluate.mjs",
+    "evaluate:ja": "node scripts/evaluate.mjs --model dist/support-switch-ja.mjs --cases examples/support.ja.audit.json --out dist/evaluation-ja-audit.json",
+    "evaluate:ja-dev": "node scripts/evaluate.mjs --model dist/support-switch-ja.mjs --cases examples/support.ja.test.json --out dist/evaluation-ja.json",
+    "evaluate:ja-audit-baseline": "node scripts/evaluate.mjs --model dist/support-switch.mjs --cases examples/support.ja.audit.json --out dist/evaluation-ja-audit-baseline.json",
+    "evaluate:ja-baseline": "node scripts/evaluate.mjs --model dist/support-switch.mjs --cases examples/support.ja.test.json --out dist/evaluation-ja-baseline.json",
+    "test": "node --test test/*.test.mjs",
+    "typecheck": "tsc -p tsconfig.json",
+    "demo": "node examples/demo.mjs",
+    "start": "node scripts/serve.mjs",
+    "pack": "bun pm pack --destination artifacts --ignore-scripts",
+    "test:package": "node scripts/test-package.mjs"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "devDependencies": {
+    "typescript": "5.8.3"
+  },
+  "license": "MIT",
+  "files": [
+    "bin/",
+    "src/",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

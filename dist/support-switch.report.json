@@ -1,0 +1,32 @@
+{
+  "name": "support-inbox",
+  "parameters": 16388,
+  "weightBytes": 16384,
+  "artifactBytes": 27430,
+  "gzipBytes": 17129,
+  "brotliBytes": 15401,
+  "training": {
+    "examples": 450,
+    "epochs": 100,
+    "seed": 20260917,
+    "architecture": "hashed word/character n-grams + linear softmax, int8 weights",
+    "provenance": "Assistant-authored English examples with simple prefix/suffix augmentation. No external teacher model. Evaluation phrases were authored separately before training. English only; unrelated, ambiguous, multiple-intent and unsupported-language requests should fall back.",
+    "specSha256": "979a07838ce6c0cccf09e8449889017de2a2adf36d6a313f2e451d54d6035d02"
+  },
+  "calibration": {
+    "count": 26,
+    "accepted": 12,
+    "acceptedErrors": 0,
+    "note": "Thresholds selected on this small authored calibration set; not a statistical safety guarantee."
+  },
+  "policy": {
+    "minScore": 0.4,
+    "minMargin": 0.3
+  },
+  "quantization": {
+    "checked": 476,
+    "changedWinners": 0,
+    "maxScoreDifference": 0.00453156466574256
+  },
+  "compileMs": 506.95775000000003
+}
